@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HospitalApp.Server.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230622105831_Init")]
+    [Migration("20230623063153_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -118,10 +118,6 @@ namespace HospitalApp.Server.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("IdentityNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
