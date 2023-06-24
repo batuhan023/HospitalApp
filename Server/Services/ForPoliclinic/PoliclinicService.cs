@@ -66,7 +66,7 @@ namespace HospitalApp.Server.Services.ForPoliclinic
                 {
                     
                     Success = false,
-                    Message = "Policlinic is not found."
+                    Message = "Policlinic is not found.."
                 };
             }
             return new ServiceResponse<List<Policlinic>>
