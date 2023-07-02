@@ -1,5 +1,6 @@
 using HospitalApp.Server.Context;
 using HospitalApp.Server.Services.ForAuth;
+using HospitalApp.Server.Services.ForDoctor;
 using HospitalApp.Server.Services.ForPoliclinic;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<DataContext>(options=>options.UseSqlServer(builder
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPoliclinicService, PoliclinicService>();
+builder.Services.AddScoped<IDoctorService, DoctorService>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
@@ -60,6 +62,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
 var app = builder.Build();
