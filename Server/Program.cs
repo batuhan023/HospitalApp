@@ -1,6 +1,7 @@
 using HospitalApp.Server.Context;
 using HospitalApp.Server.Services.ForAuth;
 using HospitalApp.Server.Services.ForDoctor;
+using HospitalApp.Server.Services.ForMeet;
 using HospitalApp.Server.Services.ForPoliclinic;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -17,6 +18,7 @@ builder.Services.AddDbContext<DataContext>(options=>options.UseSqlServer(builder
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPoliclinicService, PoliclinicService>();
 builder.Services.AddScoped<IDoctorService, DoctorService>();
+builder.Services.AddScoped<IMeetService, MeetService>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
