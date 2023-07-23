@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using HospitalApp.Client;
 using HospitalApp.Client.Services.ForAuth;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -9,7 +10,10 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
+builder.Services.AddAuthorizationCore();
+builder.Services.AddOptions();
 
 await builder.Build().RunAsync();

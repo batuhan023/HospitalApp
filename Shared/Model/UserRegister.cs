@@ -9,7 +9,7 @@ namespace HospitalApp.Shared.Model
 {
     public class UserRegister
     {
-        [Required,EmailAddress]
+        [Required(ErrorMessage ="Email alanı gereklidir"),EmailAddress]
         public string Email { get; set; }
         [Required,StringLength(100,MinimumLength =6)]
         public string Password { get; set; }
